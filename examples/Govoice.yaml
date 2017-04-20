@@ -1,0 +1,9 @@
+pdf: true
+template: "templates/invoice.html"
+out_dir: "out"
+from:
+  name: "Bruce Wayne"
+  street: "Lonely Island 1"
+  zip: "1337"
+  city: "Gotham City"
+  mobile: "012345678"

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Invoice</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            {% include "style.css" %}
+        </style>
+    </head>
+    <body>
+        <header class="clearfix">
+            {% comment %}
+            <div id="logo">
+                <img src="logo.png">
+            </div>
+            {% endcomment %}
+            <div id="company">
+                <h2 class="name">{{ from.Name }}</h2>
+                <div>{{ from.Street }}<br>
+                 {{ from.ZIP }} {{ from.City}}</div>
+                <div>{{ from.Mobile}}</div>
+            </div>
+        </header>
+        <main>
+        <div id="details" class="clearfix">
+            <div id="client">
+            <div class="to">To:</div>
+            <h2 class="name">{{ to.Name }}</h2>
+            <div class="address">{{ to.Street }}<br>
+                 {{ to.ZIP }} {{ to.City}}</div>
+            </div>
+            <div id="invoice">
+            <h1>{{ name }}</h1>
+            <div class="date">Date: {{ date }}</div>
+            {#<div class="date">Zahlbar bis: 30/06/2014</div>#}
+            </div>
+        </div>
+        <table border="0" cellspacing="0" cellpadding="0">
+            <thead>
+                <th class="no">#</th>
+                <th class="desc">Description</th>
+                <th class="unit">Unit</th>
+                <th class="unitPrice">Price per Unit</th>
+                <th class="qty">Quantity</th>
+                <th class="total">Total</th>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.ID }}</td>
+                    <td>{{ item.Description }}</td>
+                    <td>h</td>
+                    <td>{{ item.PricePerUnit|floatformat:2 }} €/h</td>
+                    <td>{{ item.Quantity|floatformat:2 }} h</td>
+                    <td>{{ item.Total|floatformat:2 }} €</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="2">TOTAL</td>
+                <td>{{ total|floatformat:2 }} €</td>
+            </tr>
+            </tfoot>
+        </table> 
+        <div id="thanks">Thank you!</div>
+        <div id="notices">
+            <div>Notice:</div>
+            <div class="notice">
+                <p>Full payment is due within 14 days from the date of invoice to our bank account. </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h3>Contact:</h3>
+        <p>
+            Wayne Enterprises<br/>
+            IBAN: Some IBAN in Gotham <br>
+            BIC: XXXXX1GOT
+        </p>
+    </footer>
+  </body>
+</html>

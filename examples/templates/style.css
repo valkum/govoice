@@ -1,0 +1,12 @@
+@font-face {
+  font-family: SourceSansPro;
+  src: url(SourceSansPro-Regular.ttf);
+}
+* {
+  box-sizing:border-box;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

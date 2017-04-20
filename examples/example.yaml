@@ -1,0 +1,21 @@
+date: "XX.XX.2017"
+to:
+  name: "Client 1"
+  street: "Some Street 1"
+  zip: "1337"
+  city: "Gotham City"
+items:
+- id: 1
+  description: "Special Services"
+  pricePerUnit: 40
+  quantity: 100
+  total: 4000
+- id: 2
+  description: "Special Services (Discounted)"
+  pricePerUnit: 20
+  quantity: 100
+  total: 2000
+- id: 3
+  description: "Discount"
+  total: -2000
+
