@@ -8,6 +8,11 @@ Govoice creates your invoices only using yaml and django jinja templates.
 go get github.com/valkum/govoice
 ```
 
+For PDF output please install electron-pdf using
+```
+npm install -g electron-pdf
+```
+
 ## Config
 
 Simply create a file named ´Govoice.yaml´ in your working dir, ´~/.govoice´ or in /etc/govoice
